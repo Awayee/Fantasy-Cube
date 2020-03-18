@@ -3,6 +3,13 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
+[Ll]ibrary/
+[Pp]ackages/
+[Tt]emp/
+.vscode/
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
+MagicCube.sln
 
 # Other files and folders
 .settings/

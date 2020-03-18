@@ -1,0 +1,267 @@
+fileFormatVersion: 2
+guid: f95f0d28d290bdb4b9fbaf65479ebd01
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cube0
+    100002: Cube01
+    100004: Cube02
+    100006: Cube03
+    100008: Cube04
+    100010: Cube05
+    100012: Cube06
+    100014: Cube07
+    100016: Cube08
+    100018: Cube09
+    100020: Cube10
+    100022: Cube11
+    100024: Cube12
+    100026: Cube13
+    100028: Cube14
+    100030: Cube15
+    100032: Cube16
+    100034: Cube17
+    100036: Cube18
+    100038: Cube19
+    100040: Cube20
+    100042: Cube21
+    100044: Cube22
+    100046: Cube23
+    100048: Cube24
+    100050: Cube25
+    100052: Cube26
+    100054: //RootNode
+    400000: Cube0
+    400002: Cube01
+    400004: Cube02
+    400006: Cube03
+    400008: Cube04
+    400010: Cube05
+    400012: Cube06
+    400014: Cube07
+    400016: Cube08
+    400018: Cube09
+    400020: Cube10
+    400022: Cube11
+    400024: Cube12
+    400026: Cube13
+    400028: Cube14
+    400030: Cube15
+    400032: Cube16
+    400034: Cube17
+    400036: Cube18
+    400038: Cube19
+    400040: Cube20
+    400042: Cube21
+    400044: Cube22
+    400046: Cube23
+    400048: Cube24
+    400050: Cube25
+    400052: Cube26
+    400054: //RootNode
+    2100000: Base
+    2100002: White
+    2100004: Orange
+    2100006: Red
+    2100008: Green
+    2100010: Yellow
+    2100012: Blue
+    2300000: Cube0
+    2300002: Cube01
+    2300004: Cube02
+    2300006: Cube03
+    2300008: Cube04
+    2300010: Cube05
+    2300012: Cube06
+    2300014: Cube07
+    2300016: Cube08
+    2300018: Cube09
+    2300020: Cube10
+    2300022: Cube11
+    2300024: Cube12
+    2300026: Cube13
+    2300028: Cube14
+    2300030: Cube15
+    2300032: Cube16
+    2300034: Cube17
+    2300036: Cube18
+    2300038: Cube19
+    2300040: Cube20
+    2300042: Cube21
+    2300044: Cube22
+    2300046: Cube23
+    2300048: Cube24
+    2300050: Cube25
+    2300052: Cube26
+    3300000: Cube0
+    3300002: Cube01
+    3300004: Cube02
+    3300006: Cube03
+    3300008: Cube04
+    3300010: Cube05
+    3300012: Cube06
+    3300014: Cube07
+    3300016: Cube08
+    3300018: Cube09
+    3300020: Cube10
+    3300022: Cube11
+    3300024: Cube12
+    3300026: Cube13
+    3300028: Cube14
+    3300030: Cube15
+    3300032: Cube16
+    3300034: Cube17
+    3300036: Cube18
+    3300038: Cube19
+    3300040: Cube20
+    3300042: Cube21
+    3300044: Cube22
+    3300046: Cube23
+    3300048: Cube24
+    3300050: Cube25
+    3300052: Cube26
+    4300000: Cube05
+    4300002: Cube13
+    4300004: Cube06
+    4300006: Cube07
+    4300008: Cube14
+    4300010: Cube15
+    4300012: Cube24
+    4300014: Cube23
+    4300016: Cube22
+    4300018: Cube04
+    4300020: Cube12
+    4300022: Cube01
+    4300024: Cube08
+    4300026: Cube0
+    4300028: Cube16
+    4300030: Cube25
+    4300032: Cube26
+    4300034: Cube21
+    4300036: Cube03
+    4300038: Cube02
+    4300040: Cube10
+    4300042: Cube11
+    4300044: Cube20
+    4300046: Cube19
+    4300048: Cube18
+    4300050: Cube17
+    4300052: Cube09
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: b6ace2159254518489f0c42ee2366b91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue
+    second: {fileID: 2100000, guid: bc52355b290afee45943e0db7168ed47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green
+    second: {fileID: 2100000, guid: f7c663d62a429e94aa181c1c5772e031, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orange
+    second: {fileID: 2100000, guid: e65e5b1574f2ace4e99d8d8011ebe609, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: 7baa939ac744d794f8279dc3012c8a6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 64b86bb037e67ea4bab690637b3e32d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: 18ede83bfb89f2d41b90b852fd27eab6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
