@@ -277,7 +277,7 @@ public class Controller : MonoBehaviour
             if (Input.GetTouch(1).phase == TouchPhase.Ended)
             {
                 if(Input.touchCount>2)
-                    touchStart2 = Input.GetTouch(1).position;
+                    touchStart2 = Input.GetTouch(2).position;
             }
 
         }
