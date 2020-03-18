@@ -345,6 +345,7 @@ public class OnMagicCube : MonoBehaviour
             transform.GetChild(i).localPosition = pos;
             transform.GetChild(i).localEulerAngles = Vector3.zero;
         }
+        System.GC.Collect();//调用垃圾回收
     }
     public void Revoke()//撤销
     { 
