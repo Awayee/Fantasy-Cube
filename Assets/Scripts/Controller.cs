@@ -17,11 +17,11 @@ public class Controller : MonoBehaviour
     enum TouchType {none, rotateCubes, controlView}//判断触摸控制类型
     TouchType touchType;
     //List<Vector2> points = new List<Vector2>();//记录触摸点
-    Dictionary<int, Vector2> points = new Dictionary<int, Vector2>();//记录触摸点
+    //Dictionary<int, Vector2> points = new Dictionary<int, Vector2>();//记录触摸点
     [SerializeField] private GameObject sureExitPanel;//确认退出窗口
     public delegate void OnBackButton();//返回按钮事件
     public event OnBackButton onBackButton;
-    private bool exitting =false;//是否已弹出窗口
+    //private bool exitting =false;//是否已弹出窗口
     // Use this for initialization
     void Start()
     {
@@ -273,11 +273,13 @@ public class Controller : MonoBehaviour
             {
                 if(Input.touchCount>2)
                     touchStart1 = Input.GetTouch(2).position;
+                else if(Input.touchCount == 2)touchStart1=Input.GetTouch(1).position;
             }
             if (Input.GetTouch(1).phase == TouchPhase.Ended)
             {
                 if(Input.touchCount>2)
                     touchStart2 = Input.GetTouch(2).position;
+                else if(Input.touchCount == 2)touchStart1=Input.GetTouch(0).position;
             }
 
         }
