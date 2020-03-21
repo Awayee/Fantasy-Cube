@@ -16,13 +16,9 @@ public class Controller : MonoBehaviour
     float touchTime;//检测触摸时长
     enum TouchType {none, rotateCubes, controlView}//判断触摸控制类型
     TouchType touchType;
-    //List<Vector2> points = new List<Vector2>();//记录触摸点
-    //Dictionary<int, Vector2> points = new Dictionary<int, Vector2>();//记录触摸点
     [SerializeField] private GameObject sureExitPanel;//确认退出窗口
     public delegate void OnBackButton();//返回按钮事件
     public event OnBackButton onBackButton;
-    //private bool exitting =false;//是否已弹出窗口
-    // Use this for initialization
     void Start()
     {
         magicCube = GameObject.FindObjectOfType<OnMagicCube>();
@@ -54,7 +50,7 @@ public class Controller : MonoBehaviour
     void LateUpdate()
     {
         #region Windows平台
-        /*
+        
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
         if (Input.GetMouseButtonDown(0))
         {
@@ -140,7 +136,7 @@ public class Controller : MonoBehaviour
             onCamera.ScaleView(deltaDis);
             //print("滚轮在滑动哦！" + deltaDis);
         }
-#endif*/
+#endif
         #endregion
 
         #region 安卓平台
