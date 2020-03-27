@@ -345,15 +345,15 @@ public class OnCube : MonoBehaviour
             transform.GetChild(i).localPosition = pos;
             transform.GetChild(i).localEulerAngles = Vector3.zero;
         }*/
-        StartCoroutine(ResetCubeAnimation());        
+        StartCoroutine(ResetCubeAnimation(1.618f));        
     }
-    IEnumerator ResetCubeAnimation() //强制复原动画
+    IEnumerator ResetCubeAnimation(float scale) //强制复原动画
     {
         if(!auto)auto = true;
         //记录每个方块的位置
         Vector3[] targets = new Vector3[transform.childCount];
         for (int i = 1; i < transform.childCount;i++){
-            targets[i] = 2 * transform.GetChild(i).localPosition;
+            targets[i] = scale * transform.GetChild(i).localPosition;
         }
         float t = Time.time;
         //方块分开
@@ -370,7 +370,7 @@ public class OnCube : MonoBehaviour
         {
             string[] temp = transform.GetChild(i).name.Split(' ');
             targets[i] = new Vector3(float.Parse(temp[0]), float.Parse(temp[1]), float.Parse(temp[2]));
-            transform.GetChild(i).localPosition = 2*targets[i];
+            transform.GetChild(i).localPosition = scale*targets[i];
             transform.GetChild(i).localEulerAngles = Vector3.zero;
             yield return null;
         }
