@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class OnSettingPanel : MonoBehaviour {
     [SerializeField]Slider volumeSlider, maxstepsSlider, rotateSpeedSlider;
-    OnMagicCube magicCube;
+    OnCube magicCube;
 	void OnEnable(){
 		//如果组件为空 ，获取组件
-		if(magicCube == null)magicCube = GameObject.FindObjectOfType<OnMagicCube>();
+		if(magicCube == null)magicCube = GameObject.FindObjectOfType<OnCube>();
 		//if(volumeSlider ==null)volumeSlider = transform.GetChild(0).GetComponent<Slider>();
 		//if(maxstepsSlider == null)maxstepsSlider = transform.GetChild(1).GetComponent<Slider>();
         volumeSlider.value = 10 * magicCube.GetComponent<AudioSource>().volume;

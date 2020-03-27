@@ -9,7 +9,7 @@ public class Controller : MonoBehaviour
     OnCamera onCamera;//主相机脚本
     private Vector3 startPoint, normal;//检测到的点，点的法向量
     Vector2 touchStart1, touchStart2;//多点触摸时只取前两个点
-    OnMagicCube magicCube;
+    OnCube magicCube;
     RaycastHit hit;//射线检测到的物体
     private Transform hittedCube;//射线检测到的物体
     float currentTime;//当前时间
@@ -21,16 +21,12 @@ public class Controller : MonoBehaviour
     public event OnBackButton onBackButton;
     void Start()
     {
-        magicCube = GameObject.FindObjectOfType<OnMagicCube>();
+        magicCube = GameObject.FindObjectOfType<OnCube>();
         mainCamera = Camera.main;
         onCamera = mainCamera.transform.parent.GetComponent<OnCamera>();
 
         magicCube.RenameCubes();
         //onBackButton += SetPaneActive;
-    }
-    public void S() //打开或关闭某个窗口
-    {
-        sureExitPanel.SetActive(true);
     }
     public void Exit()//退出游戏
     {

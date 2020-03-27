@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System.Text;
 
 //实现触摸旋转魔方的一面
-public class OnMagicCube : MonoBehaviour
+public class OnCube : MonoBehaviour
 {
     private bool auto = false;
     public bool Auto{get { return auto; }}//魔方是否正在自行运作
@@ -337,15 +337,54 @@ public class OnMagicCube : MonoBehaviour
     {
         AddSteps(-steps);//step=0
         redoSteps.Clear();redo.interactable = false;//清除重做栈，禁用重做按钮
-
+        /*
         for (int i = 1; i < transform.childCount; i++)
         {
             string[] temp = transform.GetChild(i).name.Split(' ');
             Vector3 pos = new Vector3(float.Parse(temp[0]), float.Parse(temp[1]), float.Parse(temp[2]));
             transform.GetChild(i).localPosition = pos;
             transform.GetChild(i).localEulerAngles = Vector3.zero;
+        }*/
+        StartCoroutine(ResetCubeAnimation());        
+    }
+    IEnumerator ResetCubeAnimation() //强制复原动画
+    {
+        if(!auto)auto = true;
+        //记录每个方块的位置
+        Vector3[] targets = new Vector3[transform.childCount];
+        for (int i = 1; i < transform.childCount;i++){
+            targets[i] = 2 * transform.GetChild(i).localPosition;
+        }
+        float t = Time.time;
+        //方块分开
+        while(Time.time - t <= rotateDuration){
+            for (int i = 1; i < transform.childCount;i++){
+                transform.GetChild(i).localPosition =
+                    Vector3.Lerp(transform.GetChild(i).localPosition, targets[i], (Time.time - t) / rotateDuration);
+            }
+            yield return null;
+        }
+        t = Time.time;
+        //归位
+        for (int i = 1; i < transform.childCount; i++)
+        {
+            string[] temp = transform.GetChild(i).name.Split(' ');
+            targets[i] = new Vector3(float.Parse(temp[0]), float.Parse(temp[1]), float.Parse(temp[2]));
+            transform.GetChild(i).localPosition = 2*targets[i];
+            transform.GetChild(i).localEulerAngles = Vector3.zero;
+            yield return null;
+        }
+        t = Time.time;
+        //合拢
+        while(Time.time-t <= rotateDuration){
+            for (int i = 1; i < transform.childCount;i++){
+                transform.GetChild(i).localPosition =
+                    Vector3.Lerp(transform.GetChild(i).localPosition, targets[i], (Time.time - t) / rotateDuration);
+            }
+            yield return null;
         }
         System.GC.Collect();//调用垃圾回收
+        auto = false;
     }
     public void Revoke()//撤销
     { 
