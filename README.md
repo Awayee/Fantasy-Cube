@@ -6,7 +6,7 @@ Unity3D version: 2018.7.f1
 # Play skills for Android mobile phones:
   · Touch the cube and drag by single finger to rotate a side;
   
-  · Touch the empty area to rotate cube;
+  · Touch the empty area and drag to rotate view;
   
   · Multi-finger touching can exactly controll the scene view (by rotating cube or scalling view);
   
