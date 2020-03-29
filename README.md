@@ -1,5 +1,5 @@
 # Fantasy-Cube
-A Rubik's cube coded by Unity3D.
+A Rubik's cube game coded with Unity3D.
 
 Unity3D version: 2018.7.f1
 
