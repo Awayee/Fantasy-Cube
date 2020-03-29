@@ -22,7 +22,7 @@ public class OnCube : MonoBehaviour
     [SerializeField] private Button revoke, redo, reset;//按钮
 
     #region 触摸旋转
-    public void RotateCubeByDrag(Transform cube, Vector3 direction)
+    public void RotateCubeByTouch(Transform cube, Vector3 direction)
     {
         if (auto) return;
         //得到三个坐标轴偏移最大的值，并转换方向向量
@@ -30,7 +30,7 @@ public class OnCube : MonoBehaviour
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
             if (Mathf.Abs(direction.z) > Mathf.Abs(direction.x)) dir = new Vector3(0, 0, direction.z > 0 ? 1 : -1);
-            else dir = new Vector3(direction.x > 0 ? 1 : -1, 0, 0); ;
+            else dir = new Vector3(direction.x > 0 ? 1 : -1, 0, 0);
         }
         else
         {
@@ -320,9 +320,6 @@ public class OnCube : MonoBehaviour
             yield return StartCoroutine(CubesRotateAnimation(ConvertChar(temp)));
         }
     }
-    #endregion
-
-
     public void RenameCubes()//重命名方块以标记每个方块的位置
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -464,6 +461,8 @@ public class OnCube : MonoBehaviour
         }
         print(sb);
     }
+    #endregion
+
     public void PlayAudio(AudioClip a){
         audioSource.clip = a;
         audioSource.Play();
@@ -483,4 +482,28 @@ public class OnCube : MonoBehaviour
     {
         rotateDuration = .5f / value;
     }
+    /*
+    public void Strench(float d)//弹性拉伸
+    {
+        print("d = " + d);
+        // print("1 & -6 = " + (1 & -7));
+        for (int i = 0; i < transform.childCount;i++){
+            Transform child = transform.GetChild(i);
+            Vector3 target;
+            if(child.localPosition.x >.01f)target.x = 3.6f;
+            else if(child.localPosition.x<-0.1f)target.x = -3.6f;
+            else target.x = 0;
+            if(child.localPosition.y >.01f)target.y = 3.6f;
+            else if(child.localPosition.y<-0.1f)target.y = -3.6f;
+            else target.y = 0;
+            if(child.localPosition.z >.01f)target.z = 3.6f;
+            else if(child.localPosition.z<-0.1f)target.z = -3.6f;
+            else target.z = 0;
+            child.localPosition = Vector3.Lerp(child.localPosition, target, d*.1f);
+        }
+    }
+    public void Extruct(float d)//挤压
+    {
+        
+    }*/
 }

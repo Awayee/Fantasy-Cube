@@ -8,12 +8,9 @@ public class OnCamera : MonoBehaviour
     Transform target;
     [SerializeField] float maxDistance = 15, minDistance = 55; //相机距离，视野范围限制
     private float defaultDistance; //相机默认距离
-    private Vector3 mouseStartPos;//鼠标按下时的坐标
     private Quaternion defaultRotation;//相机默认旋转
     private float Distance;//实时相机距离
     private bool auto = false;
-    public bool Auto{get { return auto; } }
-
     //Coroutine animation;//复位动画协程
     //float deltaT; //帧率测试
     void Awake()//赋值
@@ -31,13 +28,8 @@ public class OnCamera : MonoBehaviour
     }
     public void rotateView(Vector2 offset)//旋转视野
     {
-        //offset *= .1f;
-        //Quaternion q = Quaternion.AngleAxis(offset.magnitude,Vector3.Cross(transformFwd, offset)) * currentRotation;
-        //target.localRotation = Quaternion.Slerp(target.localRotation, q,.3f);
-        //target.eulerAngles = Vector3.Lerp(currentEuler, end, .3f);
-        //currentRotation = target.localRotation;
         Vector3 rotate = new Vector3(-offset.y, offset.x, 0);//插值平滑
-        target.Rotate(Vector3.Lerp(Vector3.zero, rotate,.1f), Space.Self);
+        target.Rotate(Vector3.Lerp(Vector3.zero, rotate,4*Time.deltaTime), Space.Self);
     }
     public void ScaleView(float scale)//缩放视野
     {
@@ -49,6 +41,14 @@ public class OnCamera : MonoBehaviour
             mainCamera.localPosition = new Vector3(0, 0, -maxDistance);
         else if (tempDis < minDistance)
             mainCamera.localPosition = new Vector3(0, 0, -minDistance);
+    }
+    public bool CameraDisMin()//相机距离最小值
+    {
+        return -mainCamera.localPosition.z <= minDistance;
+    }
+    public bool CameraDisMax()//相机距离最大值
+    {
+        return -mainCamera.localPosition.z >= maxDistance;
     }
     public void SetDefault()//恢复默认视角
     {
