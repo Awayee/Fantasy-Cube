@@ -15,7 +15,7 @@ Unity3D version: 2018.7.f1
   · "Back" button on the navigation bar to exit;
   
   
-# For windows:
+# For Windows PC:
   · Left click and drag to rotate a side of the cube;
   
   · Right click and drag to rotate the view direction;
@@ -40,4 +40,4 @@ Unity3D version: 2018.7.f1
     
     'f' -- front
     
-    'b' --back
+    'b' -- back
