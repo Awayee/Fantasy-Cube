@@ -6,14 +6,17 @@ public class OnPanel : MonoBehaviour {
 
     // Use this for initialization
     Controller controller;
+    Animation thisAnimation;
     void OnEnable(){
 		if(controller == null)controller = GameObject.FindObjectOfType<Controller>();//获取对象
-        controller.onBackButton += CloseThisPanel;
+        if(thisAnimation == null)thisAnimation = GetComponent<Animation>();
+        controller.onBackButton += ClosePanel;
     }
-	void OnDisable(){
-        controller.onBackButton -= CloseThisPanel;
+    public void ClosePanel(){
+        controller.onBackButton -= ClosePanel;
+        thisAnimation.Play("PanelOut");
     }
-	void CloseThisPanel()//关闭此窗口
+	void SetDisable()//关闭此窗口
 	{
         this.gameObject.SetActive(false);
     }
